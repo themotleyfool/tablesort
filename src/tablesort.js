@@ -135,12 +135,17 @@
           items = [],
           i = that.thead ? 0 : 1,
           sortMethod = header.getAttribute('data-sort-method'),
+          defaultSortOrder = header.getAttribute('data-default-sort-order'),
           sortOrder = header.getAttribute('aria-sort');
 
       that.table.dispatchEvent(createEvent('beforeSort'));
 
       // If updating an existing sort, direction should remain unchanged.
       if (!update) {
+        if (!sortOrder && defaultSortOrder) {
+          sortOrder = defaultSortOrder;
+        }
+
         if (sortOrder === 'ascending') {
           sortOrder = 'descending';
         } else if (sortOrder === 'descending') {

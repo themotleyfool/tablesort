@@ -100,6 +100,33 @@ If you have two or more table heading rows you can specify the one that enables 
 </table>
 {% endhighlight %}
 
+### Specify a default sort for a table heading
+If you have some columns that should have a custom default sort order, you can add a `data-default-sort-order` attribute to the desired `<th>` element.
+
+{% highlight html %}<table>
+  <thead>
+    <tr>
+      <th data-default-sort-order='descending'>Descending Sort Row</th>
+      <th>Default Sort Row</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+{% endhighlight %}
+
 
 ### Events
 
